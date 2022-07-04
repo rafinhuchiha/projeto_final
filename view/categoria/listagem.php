@@ -2,10 +2,10 @@
     <h1>Listagem de Categorias</h1>
     <hr>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-responsive">
         <thead>
             <tr>
-                <th>Nome</th>
+                <th class="col-10">Nome</th>
                 <th>Ações</th>
             </tr>
         </thead>        
@@ -14,8 +14,8 @@
             <tr>
                 <td><?= $categoria ['nome']?> </td>
                 <td> 
-                    <a href="http://" class="btn btn-danger" title="excluir"> <i class="fa-solid fa-trash-can"></i> </a>
-                    <a href="http://" class="btn btn-primary" title="editar"> <i class="fa-solid fa-pencil"></i> </a>    
+                    <a href="<?= base_url() ?>?c-categoria&m=excluir&id=<?= $categoria ['idcategoria']?>" class="btn btn-danger" title="Excluir"> <i class="fa-solid fa-trash-can"></i> </a>
+                    <a href="http://" class="btn btn-primary" title="Editar"> <i class="fa-solid fa-pencil"></i> </a>    
                 </td>
             </tr>
             <?php endforeach;?>
