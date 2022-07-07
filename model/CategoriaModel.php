@@ -1,5 +1,5 @@
 <?php
-require "config/Conexao.php";
+require_once "config/Conexao.php";
 class CategoriaModel{
 
     function __construct(){

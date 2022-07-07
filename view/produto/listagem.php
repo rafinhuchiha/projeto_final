@@ -18,11 +18,14 @@
         <tbody>
             <?php foreach($produtos as $produto):?>
             <tr>
-                <td><?php $produto ['nome']; ?> </td>
-                
-                <td><?php $produto ['foto']; ?> </td>
-                <td><?php $produto ['preco']; ?> </td>
-                <td><?php $produto ['marca']; ?> </td>
+                <td><?php echo $produto ['nome']; ?> </td>
+                <td>
+                    <a href="<?php echo $produto ['foto']; ?>">
+                    <img src="<?php echo $produto ['foto']; ?>" height="30px" >
+            </a> 
+                </td>
+                <td><?php echo $produto ['preco']; ?> </td>
+                <td><?php echo $produto ['marca']; ?> </td>
 
                 <td> 
                     <a href="<?= base_url() ?>?c=produto&m=excluir&id=<?= $produto ['idproduto']?>" class="btn btn-danger" title="Excluir"> <i class="fa-solid fa-trash-can"></i> </a>
