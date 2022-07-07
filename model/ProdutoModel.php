@@ -9,7 +9,7 @@ class ProdutoModel{
     function inserir($nome, $descricao, $foto, $preco, $marca, $idcategoria ){
         $sql = "INSERT INTO produto (nome, descricao, foto, preco, marca , categoria_idcategoria) values (?, ?, ?, ?, ?, ?)";
         $comando = $this->conexao->prepare($sql);
-        $comando->bind_param("ssdssi", $nome, $descricao, $foto, $preco, $marca, $idcategoria);
+        $comando->bind_param("sssdsi", $nome, $descricao, $foto, $preco, $marca, $idcategoria);
         return $comando->execute();
     }
 
@@ -23,9 +23,9 @@ function excluir($id){
 }
 
 function atualizar($id, $nome, $descricao, $foto, $preco, $marca, $idcategoria ){
-    $sql = "UPDATE produto set nome = ?, descricao =?, foto=?, preco=?, marca=?, idcategoria=? WHERE idproduto= ?";
+    $sql = "UPDATE produto set nome = ?, descricao =?, foto=?, preco=?, marca=?, categoria_idcategoria=? WHERE idproduto= ?";
     $comando = $this->conexao->prepare($sql);
-    $comando->bind_param("ssdssii", $nome, $descricao, $foto, $preco, $marca, $idcategoria);   
+    $comando->bind_param("sssdsii", $nome, $descricao, $foto, $preco, $marca, $idcategoria, $id);   
      return $comando->execute();
 }
 

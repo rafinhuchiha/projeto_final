@@ -20,8 +20,8 @@
             <tr>
                 <td><?php echo $produto ['nome']; ?> </td>
                 <td>
-                    <a href="<?php echo $produto ['foto']; ?>">
-                    <img src="<?php echo $produto ['foto']; ?>" height="30px" >
+                    <a href="<?php echo $produto['foto']; ?>">
+                    <img src="<?php echo $produto['foto']; ?>" height="30px" >
             </a> 
                 </td>
                 <td><?php echo $produto ['preco']; ?> </td>
